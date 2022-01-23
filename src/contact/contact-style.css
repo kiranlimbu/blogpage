@@ -1,0 +1,35 @@
+.contact-container {
+  box-sizing: border-box;
+  max-width: 1210px;
+  margin: 0px auto;
+}
+
+.contact-header {
+  margin: 60px auto 30px;
+  width: fit-content;
+  text-align: center;
+}
+
+.contact-wrapper {
+  margin: 40px auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.contact-form {
+  margin-top: 40px;
+}
+
+.contact-form > div {
+  margin-bottom: 20px;
+}
+
+.contact-button:last-child {
+  margin-left: 10px;
+}
+
+.confirmation-modal {
+  padding: 50px;
+}
