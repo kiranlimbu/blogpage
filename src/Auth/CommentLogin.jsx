@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 
 import "./login-style.css";

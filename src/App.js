@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
 
 import Layout from "./layout/Index";

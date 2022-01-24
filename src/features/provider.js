@@ -1,6 +1,4 @@
-import { useState, createContext, useEffect } from "react";
-
-import { fetchApi } from "./api";
+import { useState, createContext } from "react";
 
 export const AuthContext = createContext(undefined);
 

@@ -1,11 +1,10 @@
-import { useState } from "react";
 import "./dashboard-style.css";
 
 function DashboardLayout({ children, writeBlog, showBlogs }) {
-  const [userInfo, setUserInfo] = useState({
+  const userInfo = {
     name: "Kiran Limbu",
     email: "mrlimbu@gmail.com",
-  });
+  };
 
   return (
     <div>

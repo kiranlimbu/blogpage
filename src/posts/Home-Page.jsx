@@ -8,7 +8,7 @@ import CategoryList from "../modules/CategoryList";
 import { Search } from "@material-ui/icons";
 
 export default function Home() {
-  const [loadLimit, setLoadLimit] = useState(cardData.slice(0, 50));
+  const loadLimit = cardData.slice(0, 50);
   const [currentPage, setCurrentPage] = useState(0);
   const [querry, setQuerry] = useState("");
   const [categories, setCategories] = useState([]);

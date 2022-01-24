@@ -15,7 +15,7 @@ export default function Post() {
     if (post) {
       setVal(post);
     }
-  }, []);
+  }, [title]);
 
   return (
     <div className="singlePost-container">
