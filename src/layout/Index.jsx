@@ -10,7 +10,7 @@ function MenuItem({ link, children, onClick }) {
   return (
     <li
       className="topbar-right-item"
-      id={window.location.pathname == link ? "active" : ""}
+      id={window.location.pathname === link ? "active" : ""}
     >
       <Link
         to={link}

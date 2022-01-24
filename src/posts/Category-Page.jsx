@@ -1,7 +1,6 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
 
 import "./home-style.css";
 import Card from "./Card";
