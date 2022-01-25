@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 
 import "./home-style.css";
 import Card from "./Card";
-import { cardData } from "../cardData";
+import cardData from "../cardData";
 import CategoryList from "../modules/CategoryList";
 import { Search } from "@material-ui/icons";
 
@@ -76,10 +76,10 @@ export default function Home() {
 
         <div className="card-container">
           <div className="card-grid">
-            {search(nextDisplay).map((card) => {
+            {search(nextDisplay).map((_card) => {
               return (
-                <div key={card.id}>
-                  <Card props={card} totalCards={search(nextDisplay).length} />
+                <div key={_card.id}>
+                  <Card {..._card} totalCards={search(nextDisplay).length} />
                 </div>
               );
             })}

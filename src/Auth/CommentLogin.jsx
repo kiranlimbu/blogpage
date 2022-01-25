@@ -43,6 +43,7 @@ function CommentLogin({ getUsername, getUserEmail, successful }) {
           <img
             src={require("../Auth/google_logo.png")}
             style={{ width: "50px" }}
+            alt="logo"
           />
           <span className="google-sign-text">Login with Google</span>
         </button>

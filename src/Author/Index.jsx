@@ -3,7 +3,7 @@ import { useState } from "react";
 import AddPost from "../newPost/Index";
 import BlogListTemplate from "./BlogList-template";
 import DashboardLayout from "./Dashboard-Layout";
-import { cardData } from "../cardData";
+import cardData from "../cardData.json";
 
 function Dashboard() {
   const [write, setWrite] = useState(false);

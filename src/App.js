@@ -13,14 +13,13 @@ import AuthProvider, { AuthContext } from "./features/provider";
 
 import "./App.css";
 
-function ProtectedRoute({ children, path }) {
+function ProtectedRoute({ children, exact = false, path }) {
+  console.dir("proteced");
   const authCtx = useContext(AuthContext);
   const history = useHistory();
 
-  if (!authCtx.author) {
-    history.push("/login");
-    return "";
-  }
+  if (!authCtx.author)
+    return <Route exact path="/login" component={LoginPage} />;
 
   return (
     <Route exact path={path}>
@@ -40,7 +39,6 @@ function App() {
             <Route path="/postDetail/:title" component={Post} />
             <Route path="/category/:category" component={Category} />
             <Route path="/contact" component={ContactPage} />
-            <Route exact path="/login" component={LoginPage} />
             <Route path="/login/forgotPassword" component={ForgotPassword} />
 
             <ProtectedRoute exact path="/dashboard">

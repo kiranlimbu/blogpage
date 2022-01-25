@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import "./home-style.css";
 import Card from "./Card";
-import { cardData } from "../cardData";
+import cardData from "../cardData.json";
 import { Search } from "@material-ui/icons";
 import CategoryList from "../modules/CategoryList";
 
@@ -66,10 +66,10 @@ export default function Category() {
 
         <div className="card-container">
           <div className="card-grid">
-            {search(posts).map((card) => {
+            {search(posts).map((_card) => {
               return (
-                <div key={card.id}>
-                  <Card props={card} totalCards={search(posts).length} />
+                <div key={_card.id}>
+                  <Card {..._card} totalCards={search(posts).length} />
                 </div>
               );
             })}

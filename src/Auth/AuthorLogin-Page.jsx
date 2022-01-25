@@ -14,12 +14,14 @@ function LoginPage() {
   // submit function (fetch action)
   const onSubmit = (e) => {
     e.preventDefault();
+
     const userInfo = {
       firstName: "Kiran",
       lastName: "Limbu",
       email: "kiran@awesome.com",
     };
-    if (username === "mrlimbu" && password === "1234") {
+
+    if (username === "username" && password === "1234") {
       authCtx.login(userInfo);
       history.push("/dashboard");
     }
@@ -28,7 +30,7 @@ function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-container-header">
-        <h1 className="login-title">Login</h1>
+        <h1 className="login-title">Login (demo)</h1>
         <h3 style={{ marginTop: "10px", color: "#555", letterSpacing: "2px" }}>
           to post and edit articles
         </h3>
@@ -40,6 +42,7 @@ function LoginPage() {
             className="global-input"
             type="text"
             required
+            placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -49,6 +52,7 @@ function LoginPage() {
             className="global-input"
             type="password"
             required
+            placeholder="1234"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

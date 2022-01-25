@@ -2,8 +2,16 @@ import "./post-style.css";
 import Comments from "../comment/Index";
 import { AccountCircle } from "@material-ui/icons";
 
-export default function PostDetail({ props }) {
-  const postedAt = new Date(props.postedAt).toLocaleDateString("en-US", {
+export default function PostDetail({
+  title,
+  description,
+  img,
+  content,
+  postedAt,
+  author,
+}) {
+  console.dir(description);
+  const formattedPostedAt = new Date(postedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -12,14 +20,14 @@ export default function PostDetail({ props }) {
   return (
     <div className="singlePost-container">
       <div className="singlePost-header">
-        <h1 className="singlePost-title">{props.title}</h1>
-        <p className="singlePost-description">{props.description}</p>
+        <h1 className="singlePost-title">{title}</h1>
+        <p className="singlePost-description">{description}</p>
         <div className="singlePost-metaData">
           <i className="singlePost-metaData-icon">
             <AccountCircle />
           </i>
-          <span className="singlePost-metaData-author">{props.aurthor}</span>
-          <span className="singlePost-date">{postedAt}</span>
+          <span className="singlePost-metaData-author">{author}</span>
+          <span className="singlePost-date">{formattedPostedAt}</span>
         </div>
       </div>
       <div
@@ -29,13 +37,13 @@ export default function PostDetail({ props }) {
           overflow: "hidden",
         }}
       >
-        <img src={props.img} style={{ width: "100%" }} />
+        <img src={img} style={{ width: "100%" }} alt={title} />
       </div>
       <div className="singlePost-container-wrapper">
         <div className="singlePost-body">
           <div
             className="singlePost-body-content"
-            dangerouslySetInnerHTML={{ __html: props.content }}
+            dangerouslySetInnerHTML={{ __html: content }}
           ></div>
           <div className="singlePost-body-comment">
             <Comments />

@@ -1,25 +1,22 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import "./post-style.css";
-import { postData } from "./data";
+import postData from "./data.json";
 import PostDetail from "./PostDetail";
+
+console.dir(postData);
+
+export function sluggify(str) {
+  let newStr = str.replace(/[0-9]/g, "");
+  return newStr.replace(/ /g, "-").toLowerCase();
+}
 
 export default function Post() {
   const { title } = useParams();
-  const [val, setVal] = useState();
 
-  useEffect(() => {
-    const post = postData.find((p) => p.title === title);
-
-    if (post) {
-      setVal(post);
-    }
-  }, [title]);
+  const postProps = postData.find((p) => sluggify(p.title) === sluggify(title));
 
   return (
-    <div className="singlePost-container">
-      {val && <PostDetail key={val.id} props={val} />}
-    </div>
+    <div className="singlePost-container">{<PostDetail {...postProps} />}</div>
   );
 }
