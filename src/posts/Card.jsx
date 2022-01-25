@@ -24,7 +24,7 @@ export default function Card({
   return (
     <div className={seletClass}>
       <div className="thumbnail">
-        <img src={img} style={{ width: "100%" }} />
+        <img src={img} style={{ width: "100%" }} alt={title} />
       </div>
       <div className="card-content">
         <span className="post-meta">{formattedPostedAt}</span>

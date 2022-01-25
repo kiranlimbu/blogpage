@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Layout from "./layout/Index";
 import Home from "./posts/Home-Page";
@@ -14,9 +14,7 @@ import AuthProvider, { AuthContext } from "./features/provider";
 import "./App.css";
 
 function ProtectedRoute({ children, exact = false, path }) {
-  console.dir("proteced");
   const authCtx = useContext(AuthContext);
-  const history = useHistory();
 
   if (!authCtx.author)
     return <Route exact path="/login" component={LoginPage} />;
