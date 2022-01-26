@@ -1,7 +1,7 @@
 export const commentData = [
   {
     id: "1",
-    body: "First comment",
+    body: "Great Post!",
     username: "David Young",
     userEmail: "david@gmail.com",
     parentId: null,
@@ -9,7 +9,7 @@ export const commentData = [
   },
   {
     id: "2",
-    body: "Second comment",
+    body: "Enjoyed reading this article.",
     username: "Jeniffer Brown",
     userEmail: "jeniffer@gmail.com",
     parentId: null,
@@ -17,7 +17,7 @@ export const commentData = [
   },
   {
     id: "3",
-    body: "First comment first child",
+    body: "Very informative.",
     username: "David Young",
     userEmail: "david@gmail.com",
     parentId: "1",
@@ -25,7 +25,7 @@ export const commentData = [
   },
   {
     id: "4",
-    body: "Second comment second child",
+    body: "I agree.",
     username: "David Young",
     userEmail: "david@gmail.com",
     parentId: "2",

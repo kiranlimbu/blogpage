@@ -36,8 +36,14 @@ export default function Layout({ children }) {
     setSubscriber("");
   };
 
+  // close toggle menu
+  const closeMenu = () => {
+    setToggleMenu(false);
+  };
+
   const clearState = () => {
     logout();
+    closeMenu();
   };
 
   return (
@@ -54,16 +60,25 @@ export default function Layout({ children }) {
               </span>
             </div>
             <nav>
-              <ul className={`topbar-right-list ${toggleMenu ? "show" : ""}`}>
-                <MenuItem link="/contact">Contact</MenuItem>
-                {author ? (
+              {author ? (
+                <ul className={`topbar-right-list ${toggleMenu ? "show" : ""}`}>
+                  <MenuItem link="/dashboard" onClick={closeMenu}>
+                    Dashboard
+                  </MenuItem>
                   <MenuItem link="/" onClick={clearState}>
                     Logout
                   </MenuItem>
-                ) : (
-                  <MenuItem link="/login">Login</MenuItem>
-                )}
-              </ul>
+                </ul>
+              ) : (
+                <ul className={`topbar-right-list ${toggleMenu ? "show" : ""}`}>
+                  <MenuItem link="/contact" onClick={closeMenu}>
+                    Contact
+                  </MenuItem>
+                  <MenuItem link="/login" onClick={closeMenu}>
+                    Login
+                  </MenuItem>
+                </ul>
+              )}
 
               <button
                 className="nav-btn"

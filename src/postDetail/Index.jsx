@@ -4,8 +4,7 @@ import "./post-style.css";
 import postData from "./data.json";
 import PostDetail from "./PostDetail";
 
-console.dir(postData);
-
+// remove number and space on the tile when display url
 export function sluggify(str) {
   let newStr = str.replace(/[0-9]/g, "");
   return newStr.replace(/ /g, "-").toLowerCase();

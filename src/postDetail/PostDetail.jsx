@@ -10,7 +10,6 @@ export default function PostDetail({
   postedAt,
   author,
 }) {
-  console.dir(description);
   const formattedPostedAt = new Date(postedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

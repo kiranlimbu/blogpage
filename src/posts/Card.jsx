@@ -18,6 +18,7 @@ export default function Card({
     day: "numeric",
   });
 
+  // different grid size
   const seletClass =
     totalCards >= 3 ? "card stacked" : "card stacked lessThanThree";
 

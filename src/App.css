@@ -22,7 +22,8 @@ h2 {
 }
 
 p {
-  color: grey;
+  color: gray;
+  min-height: 1rem;
 }
 
 button {
